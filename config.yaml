@@ -1,0 +1,68 @@
+# GPS Spoofing Toolkit Configuration v2.1
+
+mission:
+  start_lat: 12.9716
+  start_lon: 77.5946
+  start_alt: 30.0
+  safe_area_lat: 12.9750
+  safe_area_lon: 77.5980
+  safe_area_alt: 0.0
+  safe_area_radius_m: 10.0
+
+interceptor:
+  position_offset_m: 12.0
+  azimuth_deg: 315.0
+  elevation_deg: 45.0
+  dash_speed_ms: 20.0
+  tracking_precision_m: 0.5
+
+spoofing:
+  min_drift_rate_ms: 0.2
+  max_drift_rate_ms: 0.5
+  drift_ramp_time_s: 100.0
+  power_ramp_db_per_sec: 0.6
+  initial_power_offset_db: -6.0
+  capture_threshold_db: 3.0
+  update_interval_s: 0.1
+  ekf_safety_margin: 0.4
+  interceptor_azimuth_deg: 315.0
+  interceptor_elevation_deg: 45.0
+  satellite_azimuth_tolerance_deg: 45.0
+  min_spoofable_satellites: 4
+  selective_jamming_power_db: -95.0
+
+ekf:
+  innovation_gate_sigma: 5.0
+  gps_noise_std_m: 0.5
+  imu_drift_rate_ms: 0.15
+  tcxo_drift_ppm: 0.1
+  min_satellites: 4
+  reacq_position_threshold_m: 5.0
+  reacq_velocity_threshold_ms: 0.5
+
+gps:
+  l1_freq_hz: 1575420000.0
+  l2_freq_hz: 1227600000.0
+  ca_chip_rate_hz: 1023000.0
+  sample_rate_hz: 4092000.0
+  speed_of_light_ms: 299792458.0
+
+terrain:
+  elevation_data_path: ./data/terrain/
+  corridor_width_m: 50.0
+  max_altitude_deviation_m: 2.0
+
+magnetometer:
+  earth_field_ut: 50.0
+  inclination_deg: 27.0
+  rotation_rate_deg_per_sec: 5.0
+  coil_turns: 100
+  coil_radius_m: 0.15
+  operating_distance_m: 12.0
+
+simulation:
+  sitl_target_port: "udp:localhost:14541"
+  sitl_interceptor_port: "udp:localhost:14542"
+  scenario_duration_s: 180
+  log_path: ./logs/
+  plots_path: ./plots/
