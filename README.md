@@ -1,6 +1,6 @@
 # Honeywell Drone Interceptor — GPS Spoofing Toolkit
 
-> **DP5 · Honeywell Design-A-Thon 2026**
+
 > Advanced GPS spoofing and drone interception research toolkit with full SITL simulation.
 
 ---
